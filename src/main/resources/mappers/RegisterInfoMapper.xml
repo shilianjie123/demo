@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.school.study.demo.dao.RegisterDao">
+        <insert id="addRegister" parameterType="com.example.school.study.demo.model.RegisterInfo">
+            insert into
+            demo_register (user_id,user_identity)
+            values
+            (#{userId},#{userIdentity})
+        </insert>
+
+    <select id="getInformationByRegister" resultType="com.example.school.study.demo.model.RegisterInfo">
+            select user_id as userId, user_identity as UserIdentity
+            from
+            demo_register
+            where
+            is_delete = 0
+    </select>
+</mapper>
